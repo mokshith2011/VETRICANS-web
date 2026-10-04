@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VETRICANS | Mokshith</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            transition: 0.4s;
+        }
+
+        nav {
+            background-color: #111827;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            margin: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        .main-button {
+            padding: 12px 25px;
+            font-size: 17px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        .main-button:hover {
+            background-color: #1e3a8a;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .about-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 25px;
+            width: 200px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        .goal-box {
+            background-color: white;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .project {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 80%;
+            max-width: 600px;
+            padding: 12px;
+            margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .contact textarea {
+            height: 120px;
+        }
+
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        .dark-mode {
+            background-color: #111827;
+            color: white;
+        }
+
+        .dark-mode .hero h1 {
+            color: white;
+        }
+
+        .dark-mode .about-box,
+        .dark-mode .skill,
+        .dark-mode .goal-box,
+        .dark-mode .project {
+            background-color: #1f2937;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <button onclick="goHome()">Home</button>
+
+        <button onclick="showAbout()">About</button>
+
+        <button onclick="goSkills()">Skills</button>
+
+        <button onclick="goGoals()">Goals</button>
+
+        <button onclick="goContact()">Contact</button>
+
+        <button onclick="toggleMode()">Dark Mode</button>
+
+    </nav>
+
+    <div class="hero" id="home">
+
+        <h1>VETRICANS</h1>
+
+        <h2>Mokshith's Learning Journey</h2>
+
+        <p>
+            Hello, my name is Mokshith and I am learning
+            web development, AI and new technologies.
+        </p>
+
+        <button class="main-button" onclick="sayHello()">
+            Say Hello
+        </button>
+
+        <p id="helloMessage"></p>
+
+    </div>
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <div class="about-box">
+
+            <p>
+                Hello! My name is Mokshith.
+            </p>
+
+            <p>
+                I am a Class 11 student who is exploring
+                technology and learning how websites work.
+            </p>
+
+            <p>
+                I am starting from the basics and gradually
+                learning HTML, CSS, JavaScript, AI tools
+                and other useful technologies.
+            </p>
+
+            <p>
+                My goal is not only to learn coding.
+                I want to understand how technology can
+                be used to solve real-world problems and
+                eventually build useful projects and startups.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="skills">
+
+        <h2>What I Am Learning</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Building the structure of websites.</p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Designing and styling websites.</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Making websites interactive.</p>
+            </div>
+
+            <div class="skill">
+                <h3>AI</h3>
+                <p>Learning how AI tools can help me build.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Problem Solving</h3>
+                <p>Learning to think and solve problems.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="goals">
+
+        <h2>My Goals</h2>
+
+        <div class="goal-box">
+
+            <p>🎯 Learn programming step by step.</p>
+
+            <p>🎯 Understand Artificial Intelligence.</p>
+
+            <p>🎯 Build useful websites and projects.</p>
+
+            <p>🎯 Learn how technology can solve problems.</p>
+
+            <p>🎯 Develop skills useful for future jobs.</p>
+
+            <p>🎯 Eventually build my own startup ideas.</p>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>My Startup Journey</h2>
+
+        <div class="project">
+
+            <h3>VETRICANS</h3>
+
+            <p>
+                VETRICANS is the startup name I am currently
+                developing as part of my learning journey.
+            </p>
+
+            <p>
+                This website is one of my first experiments
+                in turning an idea into something people can
+                actually see and interact with.
+            </p>
+
+            <p>
+                More projects and ideas will be added here
+                as I continue learning.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact">
+
+            <p>
+                If you want to contact me, you can write
+                your message below.
+            </p>
+
+            <input type="text" placeholder="Your Name">
+
+            <br>
+
+            <input type="email" placeholder="Your Email">
+
+            <br>
+
+            <textarea placeholder="Write your message"></textarea>
+
+            <br>
+
+            <button class="main-button" onclick="sendMessage()">
+                Submit
+            </button>
+
+            <p id="contactMessage"></p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 VETRICANS</p>
+
+        <p>Learning • Building • Creating</p>
+
+    </footer>
+
+    <script>
+
+        function sayHello() {
+            document.getElementById("helloMessage").innerHTML =
+                "Hello! 👋 Welcome to my website.";
+        }
+
+        function showAbout() {
+            document.getElementById("about").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function goHome() {
+            document.getElementById("home").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function goSkills() {
+            document.getElementById("skills").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function goGoals() {
+            document.getElementById("goals").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function goContact() {
+            document.getElementById("contact").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        function sendMessage() {
+            document.getElementById("contactMessage").innerHTML =
+                "Thank you! Your message has been submitted.";
+        }
+
+    </script>
+
+</body>
+
+</html>
